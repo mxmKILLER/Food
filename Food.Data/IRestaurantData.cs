@@ -8,7 +8,8 @@ namespace Food.Data
 {
     public interface IRestaurantData
     {
-        IEnumerable<Restaurant> GetAll();
+        IEnumerable<Restaurant> GetRestaurantsByName(string name);
+        Restaurant GetById(int id);
     }
 
     public class InMemoryRestaurantData : IRestaurantData
@@ -24,9 +25,15 @@ namespace Food.Data
                 new Restaurant {Id = 3, Name = "La Costa", Location = "Lviv", Cuisine = CuisineType.Mexican}
             };
         }
-        public IEnumerable<Restaurant> GetAll()
+
+        public Restaurant GetById(int id)
         {
-            return restaurants.OrderBy(x => x.Name);
+            return restaurants.SingleOrDefault(r => r.Id == id);
+        }
+
+        public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
+        {
+            return restaurants.Where(r => string.IsNullOrEmpty(name) || r.Name.StartsWith(name)).OrderBy(x => x.Name);
         }
     }
 }
