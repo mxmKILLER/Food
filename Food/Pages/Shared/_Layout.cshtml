@@ -13,7 +13,7 @@
           asp-fallback-test-class="fa"
           asp-fallback-test-property="font-family"
           asp-fallback-test-value="FontAwesome" />
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
 </head>
 <body>
     <header>
@@ -48,6 +48,8 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
+            <vc:restaurant-count></vc:restaurant-count>
+            @RenderSection("footer", required: false)
             &copy; 2020 - Food - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
