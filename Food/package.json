@@ -1,0 +1,23 @@
+{
+  "name": "food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mxmKILLER/Food.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mxmKILLER/Food/issues"
+  },
+  "homepage": "https://github.com/mxmKILLER/Food#readme",
+  "dependencies": {
+    "datatables.net": "^1.10.22",
+    "datatables.net-dt": "^1.10.22"
+  }
+}
